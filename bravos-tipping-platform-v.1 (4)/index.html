@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bravos Tipping Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              fredoka: ['"Fredoka One"', 'sans-serif'],
+            },
+            colors: {
+              'primary': '#3B82F6',
+              'primary-hover': '#2563EB',
+              'secondary': '#10B981',
+              'secondary-hover': '#059669',
+              'fun-orange': '#F97316',
+              'light-bg': '#F3F4F6',
+              'dark-text': '#1F2937',
+              'medium-text': '#4B5563',
+              'light-text': '#9CA3AF'
+            }
+          }
+        }
+      }
+    </script>
+<style>
+  @media print {
+    header, #dashboard-content, .no-print { display: none !important; }
+    .print-preview-backdrop { position: static; background-color: white !important; border: none !important; box-shadow: none !important; }
+    .print-preview-content { border: none !important; box-shadow: none !important; margin: auto; }
+    #printable-sticker-content { border: none !important; }
+  }
+  .scrolling-banner-wrapper {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .scrolling-banner { display: flex; animation: marquee var(--animation-duration, 60s) linear infinite; }
+  .scrolling-banner--reverse { animation-direction: reverse; }
+  @keyframes marquee { from { transform: translateX(0%); } to { transform: translateX(-50%); } }
+  @keyframes fade-in-down { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+  .animate-fade-in-down { animation: fade-in-down 0.5s ease-out forwards; }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "firebase/": "https://esm.sh/firebase@^11.10.0/",
+    "vite": "https://esm.sh/vite@^7.0.2",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^4.6.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.8.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.3",
+    "qrcode.react": "https://esm.sh/qrcode.react@^4.2.0",
+    "jsqr": "https://esm.sh/jsqr@^1.4.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
